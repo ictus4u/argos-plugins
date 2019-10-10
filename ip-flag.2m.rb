@@ -1,1 +1,0 @@
-/home/baldor/lab/github/bitbar-plugins/Network/ip-flag.2m.rb
