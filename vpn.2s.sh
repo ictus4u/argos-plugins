@@ -14,6 +14,7 @@ ORIGINAL_THEME=("#acacac" "#ff0101" "#cc673b" "#ce8458" "#6bbb15" "#0ed812")
 
 VPN_SERVICE=${VPN_SERVICE:-openvpn}
 VPN_INTERFACE=${VPN_INTERFACE:-tun0}
+VPN_LOGFILE=${VPN_LOGFILE:-/var/log/openvpn.log}
 
 COLORS=(${RED_GREEN_THEME[@]})
 MENUFONT="" #"size=11 font=UbuntuMono-Bold"
@@ -41,4 +42,4 @@ echo "---"
 echo "Restart VPN | bash='sudo service ${VPN_SERVICE} stop && sudo service ${VPN_SERVICE} start && exit'"
 echo "Start VPN | bash='sudo service ${VPN_SERVICE} start && exit'"
 echo "Stop VPN | bash='sudo service ${VPN_SERVICE} stop && exit'"
-echo "View VPN Log | bash='sudo tail -f /var/log/openvpn.log'"
+echo "View VPN Log | bash='sudo tail -f ${VPN_LOGFILE}'"
