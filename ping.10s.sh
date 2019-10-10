@@ -1,0 +1,1 @@
+/home/baldor/lab/github/bitbar-plugins/Network/ping.10s.sh
