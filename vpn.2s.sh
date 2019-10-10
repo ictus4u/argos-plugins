@@ -18,17 +18,20 @@ VPN_INTERFACE=${VPN_INTERFACE:-tun0}
 COLORS=(${RED_GREEN_THEME[@]})
 MENUFONT="" #"size=11 font=UbuntuMono-Bold"
 
+function is_vpn_alive {
+  ifconfig ${VPN_INTERFACE} > /dev/null 2>&1
+  return $?
+}
 
 function colorize {
-  ifconfig $1 > /dev/null 2>&1
-  if [ $? == 0 ]; then
+  if is_vpn_alive; then
     echo "${COLORS[5]}"
   else
     echo "${COLORS[0]}"
   fi
 }
 
-echo "$MSG | color=$(colorize ${VPN_INTERFACE}) $MENUFONT"
+echo "$MSG | color=$(colorize) $MENUFONT"
 
 echo "---"
 echo "Restart VPN | bash='sudo service ${VPN_SERVICE} stop && sudo service ${VPN_SERVICE} start && exit'"
