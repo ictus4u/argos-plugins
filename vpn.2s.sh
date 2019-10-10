@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-VPN_SERVICE=${VPN_SERVICE:-openvpn}
-
 MSG="VPN"
 
 # Themes copied from here: http://colorbrewer2.org/
@@ -13,9 +11,13 @@ RED_GREEN_THEME=("#d73027" "#fc8d59" "#fee08b" "#d9ef8b" "#91cf60" "#1a9850")
 ORIGINAL_THEME=("#acacac" "#ff0101" "#cc673b" "#ce8458" "#6bbb15" "#0ed812")
 
 # Configuration
+
+VPN_SERVICE=${VPN_SERVICE:-openvpn}
+iface=${VPN_INTERFACE:-tun0}
+
 COLORS=(${RED_GREEN_THEME[@]})
 MENUFONT="" #"size=11 font=UbuntuMono-Bold"
-iface=tun0
+
 
 function colorize {
   ifconfig $1 > /dev/null 2>&1
