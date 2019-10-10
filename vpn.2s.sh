@@ -13,7 +13,7 @@ ORIGINAL_THEME=("#acacac" "#ff0101" "#cc673b" "#ce8458" "#6bbb15" "#0ed812")
 # Configuration
 
 VPN_SERVICE=${VPN_SERVICE:-openvpn}
-iface=${VPN_INTERFACE:-tun0}
+VPN_INTERFACE=${VPN_INTERFACE:-tun0}
 
 COLORS=(${RED_GREEN_THEME[@]})
 MENUFONT="" #"size=11 font=UbuntuMono-Bold"
@@ -28,7 +28,7 @@ function colorize {
   fi
 }
 
-echo "$MSG | color=$(colorize ${iface}) $MENUFONT"
+echo "$MSG | color=$(colorize ${VPN_INTERFACE}) $MENUFONT"
 
 echo "---"
 echo "Restart VPN | bash='sudo service ${VPN_SERVICE} stop && sudo service ${VPN_SERVICE} start && exit'"
