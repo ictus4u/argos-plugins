@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VPN_SERVICE="openvpn@baldor"
+VPN_SERVICE=${VPN_SERVICE:-openvpn}
 
 MSG="VPN"
 
