@@ -1,4 +1,4 @@
-# argos
+# argos-plugins
 Plugins for [Argos gnome shell extension](https://extensions.gnome.org/extension/1176/argos/)
 
 ## Info
